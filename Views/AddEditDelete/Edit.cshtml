@@ -1,0 +1,46 @@
+﻿@model Note
+
+<h2>Редактировать запись</h2>
+
+<form method="post" asp-controller="AddEditDelete" asp-action="Update">
+
+    <div class="validation" asp-validation-summary="ModelOnly"></div> 
+
+    <input type="hidden" asp-for="Id" value="@Model.Id"/>
+
+    <input asp-for="FirstName" />
+    <span asp-validation-for="FirstName"></span>
+    <label asp-for="FirstName"></label>
+    <br />
+
+    <label asp-for="MiddleName"></label>
+    <input asp-for="MiddleName" />
+    <span asp-validation-for="MiddleName"></span>
+    <br />
+
+    <label asp-for="LastName"></label>
+    <input asp-for="LastName" />
+    <span asp-validation-for="LastName"></span>
+    <br />
+
+    <label asp-for="PhoneNumber"></label>
+    <input asp-for="PhoneNumber" />
+    <span asp-validation-for="PhoneNumber"></span>
+    <br />
+
+    <label asp-for="Address"></label>
+    <input asp-for="Address" />
+    <span asp-validation-for="Address"></span>
+    <br />
+
+    <label asp-for="Information"></label>
+    <input asp-for="Information" />
+    <span asp-validation-for="Information"></span>
+    <br />
+
+    <input type="submit" value="Сохранить" />
+</form>
+
+<form asp-action="Index" asp-controller="Home" method="get">
+    <button class="button" type="submit">Отмена</button>
+</form>

@@ -1,0 +1,37 @@
+﻿
+@model List<Note>
+@{
+    ViewData["Title"] = "Записная книга";
+}
+
+<table cellspacing='0'>
+    <tr style="font-size:20px;">
+        <th>ID</th>
+        <th>Имя</th>
+        <th>Фамилия</th>
+    </tr>
+    
+    @foreach (var note in Model)
+    {
+        <tr>
+            <th><a href="~/Home/FullNote/@note.Id">ID: @note.Id</a></th>
+            <th>@note.FirstName</th>
+            <th>@note.LastName</th>
+            <th>
+                <form class="form-simple" asp-action="Edit" asp-controller="AddEditDelete" asp-route-id=@note.Id method ="get">
+                    <button class="button" type="submit">Редактировать</button>
+                </form>
+            </th>
+            <th>
+                <form class="form-simple" asp-action="Delete" asp-controller="AddEditDelete" asp-route-id="@note.Id" method="post">
+                    <button class="button" type="submit">Удалить</button>
+                </form>
+            </th>
+        </tr>
+
+    }
+</table>
+
+<form asp-action="Index" asp-controller="AddEditDelete">
+    <button class="button" type="submit">Добавить запись</button>
+</form>

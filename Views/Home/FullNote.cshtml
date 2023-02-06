@@ -1,0 +1,19 @@
+﻿@model Note
+
+<h2>Полная информация</h2>
+
+<div class="list">
+    <ul>
+        <li>ID: @Model.Id</li>
+        <li>Имя: @Model.FirstName</li>
+        <li>Отчество: @Model.MiddleName</li>
+        <li>Фамилия: @Model.LastName</li>
+        <li>Номер телефона: @Model.PhoneNumber</li>
+        <li>Адрес: @Model.Address</li>
+        <li>Описание: @Model.Information</li>
+    </ul>
+
+    <form asp-action="Index" asp-controller="Home">
+        <button class="button" type="submit">Назад</button>
+    </form>
+</div>
